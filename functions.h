@@ -7,11 +7,13 @@
 #include <string>
 #include <ctime>
 #include <cstdlib>
+#include <algorithm>
+#include <random>
 
 using namespace std;
 
-std::vector<std::string> readLinesFromFile(const std::string& filename);
+std::vector<std::string> readQuestionLinesFromFile(const std::string& filename);
 
-// void printPossibleAnswers(int index);
+void getAndPrintPossibleAnswers(int index, int questionsLevel);
 
 #endif

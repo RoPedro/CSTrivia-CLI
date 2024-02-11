@@ -2,57 +2,65 @@
 
 using namespace std;
 
-vector<string> readLinesFromFile(const string& filename);
+vector<string> readQuestionLinesFromFile(const string& filename);
 
 int main()
 {
     srand(static_cast<unsigned int>(time(nullptr)));
 
-    vector<string> lines = readLinesFromFile("questions/easyQuestions.txt");
-    // int questionsLevelTracker = 0;
-    // for (questionsLevelTracker < 2; questionsLevelTracker++)
-    // {
-        
-    // }
-    
-    
-    if (lines.empty())
+    cout << "Answer the trivias with a, b, c, or d." << endl;
+
+    vector<string> questionLines;
+    for (int questionsLevelTracker = 0; questionsLevelTracker <= 2; questionsLevelTracker++)
     {
-        cerr << "No lines in file" << endl;
-        return 1;
-    } else
-    {
-        int randomIndex = rand() % lines.size();
-        switch (randomIndex)
+        // read questionLines from a file and store it in a vector.
+        // switch statement to select the the level of the questions
+        switch (questionsLevelTracker)
         {
         case 0:
-            cout << lines[randomIndex] << endl;
-            cout << "a - Answer 1" << endl;
-            cout << "b - Answer 2" << endl;
-            cout << "c - Answer 3" << endl;
-
+            questionLines = readQuestionLinesFromFile("questions/easyQuestions.txt");
             break;
-        
         case 1:
-            cout << lines[randomIndex] << endl;
-            cout << "a - Answer 1" << endl;
-            cout << "b - Answer 2" << endl;
-            cout << "c - Answer 3" << endl;
-
+            questionLines = readQuestionLinesFromFile("questions/mediumQuestions.txt");
             break;
-        
         case 2:
-            cout << lines[randomIndex] << endl;
-            cout << "a - Answer 1" << endl;
-            cout << "b - Answer 2" << endl;
-            cout << "c - Answer 3" << endl;
-
+            questionLines = readQuestionLinesFromFile("questions/hardQuestions.txt"); 
             break;
         default:
             break;
         }
 
-        // cout << lines[randomIndex] << endl;
+        // Error handling in case of no questionLines in the file
+        if (questionLines.empty())
+        {
+            cerr << "No questionLines in file" << endl;
+            return 1;
+        } else
+        {
+            int randomIndex = rand() % questionLines.size();
+            switch (randomIndex, questionsLevelTracker)
+            {
+            case 0:
+                cout << questionLines[randomIndex] << endl;
+                getAndPrintPossibleAnswers(randomIndex, questionsLevelTracker);
+
+                break;
+            case 1:
+                cout << questionLines[randomIndex] << endl;
+                getAndPrintPossibleAnswers(randomIndex, questionsLevelTracker);
+
+                break;
+            case 2:
+                cout << questionLines[randomIndex] << endl;
+                getAndPrintPossibleAnswers(randomIndex, questionsLevelTracker);
+
+                break;
+            default:
+                break;
+            }
+        }
+
+
     }
 
     return 0;
