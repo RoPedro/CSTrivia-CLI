@@ -2,6 +2,6 @@ This is a personal project with no intentions of being a relevant software, the 
 
 You can compile the code on a Linux enviroment with the following command
 
-```
+```bash
 g++ -o desired_executable_name functions.cpp main.cpp
 ```
