@@ -1,4 +1,4 @@
-Possible answer 1
-Possible answer 2
-Possible answer 3
-Correct answer
+A hash table is a data structure that uses a hash function to map keys to values, offering constant time complexity for insertion, deletion, and retrieval operations.
+A hash table is a type of sorting algorithm used in cryptography.
+A hash table is a table used to store passwords securely.
+A hash table is a mechanism to organize data in a hierarchical structure.

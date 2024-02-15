@@ -1,4 +1,4 @@
-Possible answer 1
-Possible answer 2
-Possible answer 3
-Correct answer
+Big O notation represents the worst-case scenario for the time or space complexity of an algorithm.
+Big O notation measures the best-case scenario for an algorithm's efficiency.
+Big O notation is only applicable to recursive algorithms.
+Big O notation is used to denote the number of lines of code in an algorithm.

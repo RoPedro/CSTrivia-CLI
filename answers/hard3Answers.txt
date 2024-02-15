@@ -1,4 +1,4 @@
-Possible answer 1
-Possible answer 2
-Possible answer 3
-Correct answer
+Multithreading allows multiple processes to share a single CPU, reducing resource consumption and improving performance.
+Multithreading is only applicable to real-time operating systems.
+Multithreading is a security feature in network protocols.
+Multithreading is primarily used for sequential execution of tasks.

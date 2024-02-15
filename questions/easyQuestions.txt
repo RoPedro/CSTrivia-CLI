@@ -1,3 +1,3 @@
-Easy question 1
-Easy question 2
-Easy question 3
+What does HTML stands for?
+What is the purpose of a compiler?
+What does a CPU stands for?

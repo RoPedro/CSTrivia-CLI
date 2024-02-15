@@ -1,4 +1,4 @@
-Possible answer 1
-Possible answer 2
-Possible answer 3
-Correct answer
+To organize and manage data efficiently.
+To design graphical user interfaces.
+To execute instructions in a computer program.
+To regulate the flow of electrical signals within the CPU.

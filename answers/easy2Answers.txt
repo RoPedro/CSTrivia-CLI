@@ -1,4 +1,4 @@
-Possible answer 1
-Possible answer 2
-Possible answer 3
-Correct answer
+To convert high-level programming code into machine code.
+To debug errors in a program.
+To manage files and directories.
+To design user interfaces.

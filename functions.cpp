@@ -19,7 +19,7 @@ std::vector<std::string> readQuestionLinesFromFile(const std::string& filename)
             questionLines.push_back(line); // add the line to the vector
         }
         file.close(); // close the file in order to prevent memory leaks
-    } else 
+    } else // Error handling
     {
         std::cerr << "Unable to open file: " << filename << std::endl;
     }
@@ -28,7 +28,7 @@ std::vector<std::string> readQuestionLinesFromFile(const std::string& filename)
 }
 
 // Reads the answers from the file and prints it.
-void getAndPrintPossibleAnswers(int index, int questionsLevel)
+vector<string> getAndPrintPossibleAnswers(int index, int questionsLevel)
 {
     // Possible answers are different based on the specific question, even in the same level.
     vector<string> possibleAnswers;
@@ -95,7 +95,90 @@ void getAndPrintPossibleAnswers(int index, int questionsLevel)
             possibleAnswers.erase(possibleAnswers.begin() + randomAnswersIndex);
         }
         cout << endl;
-
+    
         shuffle(possibleAnswers.begin(), possibleAnswers.end(), gen);
     }
+
+    return possibleAnswers;
+}
+
+string assignCorrectAnswer(int questionIndex, vector<string> possibleAnswers, int questionsLevelTracker)
+{
+    string correctAnswer;
+    // Check the level of the question
+    switch (questionsLevelTracker)
+    {
+    case 0: // Easy
+        if (questionIndex == 0)
+        {
+            correctAnswer =  "Hyper Text Markup Language.";
+        } else if (questionIndex == 1)
+        {
+            correctAnswer =  "To convert high-level programming code into machine code";
+        } else
+        {
+            correctAnswer =  "Central Processing Unit.";
+        }
+        break;
+    
+    case 1: // Medium
+        if (questionIndex == 0)
+        {
+            correctAnswer =  "TCP provides reliable, ordered, and error-checked delivery of data, while UDP does not guarantee delivery and is connectionless.";
+        } else if (questionIndex == 1)
+        {
+            correctAnswer =  "To organize and manage data efficiently.";
+        } else
+        {
+            correctAnswer =  "Compiled languages are translated directly into machine code, while interpreted languages are translated line by line during runtime.";
+        }
+        break;
+
+    case 2: // Hard
+        if (questionIndex == 0)
+        {
+            correctAnswer =  "Big O notation represents the worst-case scenario for the time or space complexity of an algorithm.";
+        } else if (questionIndex == 1)
+        {
+            correctAnswer =  "A hash table is a data structure that uses a hash function to map keys to values, offering constant time complexity for insertion, deletion, and retrieval operations.";
+        } else
+        {
+            correctAnswer =  "Multithreading allows multiple processes to share a single CPU, reducing resource consumption and improving performance.";
+        }
+        break;
+    default:
+        cerr << "Error in assignCorrectAnswer function" << endl;
+        break;
+    }
+
+    return correctAnswer;
+}
+
+int translateUserChoice(char userChoice)
+{
+    userChoice = tolower(userChoice);
+
+    switch (userChoice)
+    {
+    case 'a':
+        userChoice = 0; 
+        break;
+    
+    case 'b':
+        userChoice = 1; 
+        break;
+
+    case 'c':
+        userChoice = 2; 
+        break;
+
+    case 'd':
+        userChoice = 3; 
+        break;
+
+    default:
+        break;
+    }
+
+    return userChoice;
 }

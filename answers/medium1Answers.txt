@@ -1,4 +1,4 @@
-Possible answer 1
-Possible answer 2
-Possible answer 3
-Correct answer
+TCP provides reliable, ordered, and error-checked delivery of data, while UDP does not guarantee delivery and is connectionless.
+TCP is faster than UDP due to its connection-oriented nature.
+TCP and UDP both provide the same level of reliability and error-checking mechanisms.
+UDP is used for secure data transmission, while TCP is used for multimedia streaming.

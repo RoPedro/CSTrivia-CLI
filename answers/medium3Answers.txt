@@ -1,4 +1,4 @@
-Possible answer 1
-Possible answer 2
-Possible answer 3
-Correct answer
+Interpreted languages are translated directly into machine code, while compiled languages require an interpreter to run.
+Compiled languages are translated directly into machine code, while interpreted languages are translated line by line during runtime.
+Interpreted languages are faster than compiled languages.
+Compiled languages are primarily used for web development, while interpreted languages are used for system-level programming.

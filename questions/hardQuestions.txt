@@ -1,3 +1,3 @@
-Hard question 1
-Hard question 2
-Hard question 3
+Explain the concept of "Big O" notation in algorithm analysis.
+What is a hash table, and what are its advantages in data storage and retrieval?
+Describe the concept of multithreading and its benefits in software development
