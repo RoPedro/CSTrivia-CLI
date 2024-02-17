@@ -4,6 +4,30 @@
 
 using namespace std;
 
+vector<string> assignQuestionsToVector(int questionsLevelTracker)
+{
+    vector<string> questionLines;
+    switch (questionsLevelTracker)
+    {
+    case 0:
+        questionLines = readQuestionLinesFromFile("questions/easyQuestions.txt");
+        break;
+
+    case 1:
+        questionLines = readQuestionLinesFromFile("questions/mediumQuestions.txt");
+        break;
+
+    case 2: 
+        questionLines = readQuestionLinesFromFile("questions/hardQuestions.txt");
+        break;
+    
+    default:
+        break;
+    }
+
+    return questionLines;
+}
+
 // read questionLines from a file and store it in a vector.
 std::vector<std::string> readQuestionLinesFromFile(const std::string& filename)
 {

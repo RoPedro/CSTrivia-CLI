@@ -14,6 +14,8 @@
 
 using namespace std;
 
+vector<string> assignQuestionsToVector(int questionsLevelTracker);
+
 std::vector<std::string> readQuestionLinesFromFile(const std::string& filename);
 
 vector<string> getAndPrintPossibleAnswers(int index, int questionsLevel);

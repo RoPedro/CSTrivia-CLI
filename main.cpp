@@ -19,21 +19,7 @@ int main()
         for (int questionsLevelTracker = 0; questionsLevelTracker <= 2; questionsLevelTracker++)
         {
             // read questionLines from a file and store it in a vector.
-            // switch statement to select the the level of the questions
-            switch (questionsLevelTracker)
-            {
-            case 0:
-                questionLines = readQuestionLinesFromFile("questions/easyQuestions.txt");
-                break;
-            case 1:
-                questionLines = readQuestionLinesFromFile("questions/mediumQuestions.txt");
-                break;
-            case 2:
-                questionLines = readQuestionLinesFromFile("questions/hardQuestions.txt"); 
-                break;
-            default:
-                break;
-            }
+            questionLines = assignQuestionsToVector(questionsLevelTracker);
 
             // Error handling in case of no questionLines in the file
             if (questionLines.empty())
