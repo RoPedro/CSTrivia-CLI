@@ -182,27 +182,29 @@ int translateUserChoice(char userChoice)
 {
     userChoice = tolower(userChoice);
 
+    int translatedIndex = -1;
+
     switch (userChoice)
     {
     case 'a':
-        userChoice = 0; 
+        translatedIndex = 0; 
         break;
     
     case 'b':
-        userChoice = 1; 
+        translatedIndex = 1; 
         break;
 
     case 'c':
-        userChoice = 2; 
+        translatedIndex = 2; 
         break;
 
     case 'd':
-        userChoice = 3; 
+        translatedIndex = 3; 
         break;
 
     default:
         break;
     }
 
-    return userChoice;
+    return translatedIndex;
 }
