@@ -2,8 +2,6 @@
 
 using namespace std;
 
-vector<string> readQuestionLinesFromFile(const string& filename);
-
 int main()
 {
     cout << "\033[2J\033[1;1H";
@@ -16,6 +14,7 @@ int main()
     bool loseFlag = false;
     char userChoice;
     char restartFlag;
+    string userAnswer;
 
     // Check if the user wants to restart
     do
@@ -39,10 +38,13 @@ int main()
 
                     cout << questionLines[randomIndex] << endl; // print the question
 
-                    vector<string> possibleAnswers = getAndPrintPossibleAnswers(randomIndex, questionsLevelTracker); // assign and print the possible answers
+                    vector<string> possibleAnswers = assignPossibleAnswers(randomIndex, questionsLevelTracker); // assign and print the possible answers
+                    shuffleVectorOptions(possibleAnswers); // shuffle the possible answers
                     string correctAnswer = assignCorrectAnswer(randomIndex, possibleAnswers, questionsLevelTracker); // assign the correct answer
 
-                    cin >> userChoice;
+                    printOptionsVector(possibleAnswers);
+
+                    std::cin >> userChoice;
 
                     // validate the user's choice
                     while ( userChoice != 'a' &&
@@ -55,13 +57,13 @@ int main()
                             userChoice != 'D' ) {
                     
                         cout << "Invalid choice. Use a, b, c, or d." << endl;
-                        cin >> userChoice;
+                        std::cin >> userChoice;
                     }
 
                     int userIndex = translateUserChoice(userChoice); // translate the user's choice into a index
 
-                    string userAnswer = possibleAnswers[userIndex];
-
+                    userAnswer = possibleAnswers[userIndex];
+    
                     cout << "Correct answer: " << correctAnswer << endl;
                     cout << "Your answer: " << userAnswer << endl;
 
@@ -91,7 +93,7 @@ int main()
         }
 
         cout << "Would you like to play again? (y/n)" << endl;
-        cin >> restartFlag;
+        std::cin >> restartFlag;
         
         if (restartFlag == 'y' || restartFlag == 'Y')
         {
@@ -101,7 +103,6 @@ int main()
         
 
     } while (restartFlag == 'y' || restartFlag == 'Y');
-    
 
     return 0;
 }

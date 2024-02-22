@@ -52,7 +52,7 @@ std::vector<std::string> readQuestionLinesFromFile(const std::string& filename)
 }
 
 // Reads the answers from the file and prints it.
-vector<string> getAndPrintPossibleAnswers(int index, int questionsLevel)
+vector<string> assignPossibleAnswers(int index, int questionsLevel)
 {
     // Possible answers are different based on the specific question, even in the same level.
     vector<string> possibleAnswers;
@@ -102,28 +102,23 @@ vector<string> getAndPrintPossibleAnswers(int index, int questionsLevel)
         break;
     }
 
-    // Seed the random number generator
-    random_device rd;
-    mt19937 gen(rd());
-
-    // Shuffle the possible answers
-    shuffle(possibleAnswers.begin(), possibleAnswers.end(), gen);
-
-    for (int i = 0; i < possibleAnswers.size(); i++)
-    {
-        while (!possibleAnswers.empty())
-        {
-            int randomAnswersIndex = rand() % possibleAnswers.size();
-            cout << possibleAnswers[randomAnswersIndex] << endl;
-
-            possibleAnswers.erase(possibleAnswers.begin() + randomAnswersIndex);
-        }
-        cout << endl;
-    
-        shuffle(possibleAnswers.begin(), possibleAnswers.end(), gen);
-    }
-
     return possibleAnswers;
+}
+
+void shuffleVectorOptions(vector<string>& possibleAnswersVector)
+{
+    std::random_device rd;
+    std::mt19937 g(rd());
+    std::shuffle(possibleAnswersVector.begin(), possibleAnswersVector.end(), g);
+}
+
+void printOptionsVector(const vector<string> possibleAnswersVector)
+{
+    for (int i = 0; i < possibleAnswersVector.size(); i++)
+    {
+        char optionLetter = 'A' + i;
+        cout << optionLetter << ". " << possibleAnswersVector[i] << endl;
+    }
 }
 
 string assignCorrectAnswer(int questionIndex, vector<string> possibleAnswers, int questionsLevelTracker)
@@ -138,7 +133,7 @@ string assignCorrectAnswer(int questionIndex, vector<string> possibleAnswers, in
             correctAnswer =  "Hyper Text Markup Language.";
         } else if (questionIndex == 1)
         {
-            correctAnswer =  "To convert high-level programming code into machine code";
+            correctAnswer =  "To convert high-level programming code into machine code.";
         } else
         {
             correctAnswer =  "Central Processing Unit.";
