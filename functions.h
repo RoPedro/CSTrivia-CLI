@@ -18,7 +18,11 @@ vector<string> assignQuestionsToVector(int questionsLevelTracker);
 
 std::vector<std::string> readQuestionLinesFromFile(const std::string& filename);
 
-vector<string> getAndPrintPossibleAnswers(int index, int questionsLevel);
+vector<string> assignPossibleAnswers(int index, int questionsLevel);
+
+void shuffleVectorOptions(vector<string>& possibleAnswersVector);
+
+void printOptionsVector(const vector<string> possibleAnswersVector);
 
 string assignCorrectAnswer(int questionIndex, vector<string> possibleAnswers, int questionsLevelTracker);
 
