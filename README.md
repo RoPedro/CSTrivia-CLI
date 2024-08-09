@@ -1,4 +1,4 @@
-**ALERT: The code is currently not working as intended, it contains logic errors that is currently being fixed.**
+**ALERT: The code may have logic errors and problems in the code.**
 
 This is a personal project with no intentions of being a relevant software, the purpose is just educational, the developer is a beginner who is learning C++ and other languages and just wanted to post it here to share, mainly with it's friends.
 
